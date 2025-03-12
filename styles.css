@@ -1,0 +1,18 @@
+*{  
+    box-sizing: border-box;
+}
+
+.todo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: dashed red;
+}
+.todo h1{
+    font-size: x-large;
+    font: 2em sans-serif;
+    text-transform: uppercase;
+}
+.todo-btn{
+    text-transform: uppercase;
+}
