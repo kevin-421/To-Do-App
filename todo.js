@@ -1,8 +1,27 @@
 const newTaskEvent = document.getElementById('btn').addEventListener('click',NewTask)
+const editEvent = document.getElementById('btn').addEventListener('click',editTask)
 const deleteEvent = document.getElementById('btn').addEventListener('click',deleteTask)
 
 
+
 const NewTodo = document.querySelector('.newTodo')
+// need to keep working on this for loop
+for (let i = 0; i < NewTodo.length; i++) {
+    const element = NewTodo[i];
+    console.log(element);   
+}
+NewTodo.addEventListener('click',e => {
+
+    let promptTask = prompt('edit task:')
+
+    if(e.target.id === 'editBtn')
+        NewTodo.firstChild.textContent = promptTask
+        newText.value = ''
+
+        console.log(promptTask)
+    
+        
+})
 
 function NewTask() {
     // value from input
@@ -16,7 +35,7 @@ function NewTask() {
     // appending to container
     NewTodo.append(NewElement)
     
-        
+    
     // new button for editing task
     const newButton = document.createElement('button')
     newButton.setAttribute('id','editBtn')
@@ -28,16 +47,16 @@ function NewTask() {
     
     
     
-
+    
     
 }
 
 
-const editEvent = document.querySelector('#editBtn').addEventListener('click',editTask)
+
 
 function editTask() {
     
-    NewTodo.firstChild.textContent = 'lol'
+    // NewTodo.firstChild.textContent = 'lol'
     
     
 }
