@@ -4,24 +4,36 @@ const deleteEvent = document.getElementById('btn').addEventListener('click',dele
 
 
 
-const NewTodo = document.querySelector('.newTodo')
-// need to keep working on this for loop
-for (let i = 0; i < NewTodo.length; i++) {
-    const element = NewTodo[i];
-    console.log(element);   
-}
-NewTodo.addEventListener('click',e => {
 
+
+
+// click event for edit btn
+const NewTodo = document.querySelector('.newTodo')
+
+
+NewTodo.addEventListener('click',e => {
+    
+    // for (let i = 0; i < NewTodo.childNodes.length; i++) {
+    //     const array1 = NewTodo.childNodes[i]
+    let array1 = NewTodo.getElementsByTagName('h1')
+        for (let i = 0; i < array1.length; i++) {
+                // const element = array1[i];
+            console.log(array1[i].id)
+
+            
     let promptTask = prompt('edit task:')
 
-    if(e.target.id === 'editBtn')
-        NewTodo.firstChild.textContent = promptTask
-        newText.value = ''
-
-        console.log(promptTask)
-    
+        if(e.target.id === array1[i].id)
+            NewTodo.textContent = promptTask
+        console.log(array1[i].id);
         
+        // newText.value = ''
+
+        
+    }
 })
+
+
 
 function NewTask() {
     // value from input
@@ -34,6 +46,7 @@ function NewTask() {
     NewElement.textContent = newText
     // appending to container
     NewTodo.append(NewElement)
+
     
     
     // new button for editing task
@@ -45,6 +58,8 @@ function NewTask() {
     // append to container
     NewTodo.append(newButton)
     
+
+
     
     
     
@@ -70,3 +85,5 @@ function deleteTask() {
         // append to container
     NewTodo.append(deleteButton)
 }
+
+debugger
