@@ -1,7 +1,11 @@
 const newTaskEvent = document.getElementById('btn').addEventListener('click',NewTask)
 const editEvent = document.getElementById('btn').addEventListener('click',editTask)
 const deleteEvent = document.getElementById('btn').addEventListener('click',deleteTask)
-
+// set local storage items to DOM
+window.addEventListener('load',() => {
+    const savedTasks = localStorage.getItem('task')
+        NewTodo.textContent = savedTasks
+})
 
 
 
@@ -28,6 +32,9 @@ NewTodo.addEventListener('click',e => {
         if(e.target.id === e.target.id){
 
             NewTodo.textContent = promptTask;
+            // localstorage setting items
+            localStorage.setItem('task',promptTask)
+
         }
          else  alert('something is wrong tell dev to fix it!')
         
