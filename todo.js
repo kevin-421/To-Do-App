@@ -12,6 +12,8 @@ const NewTodo = document.querySelector('.newTodo')
 
 
 NewTodo.addEventListener('click',e => {
+    console.log(e.target.id);
+    
     
     // for (let i = 0; i < NewTodo.childNodes.length; i++) {
     //     const array1 = NewTodo.childNodes[i]
@@ -23,9 +25,14 @@ NewTodo.addEventListener('click',e => {
             
     let promptTask = prompt('edit task:')
 
-        if(e.target.id === array1[i].id)
-            NewTodo.textContent = promptTask
-        console.log(array1[i].id);
+        if(e.target.id === e.target.id){
+
+            NewTodo.textContent = promptTask;
+        }
+         else  alert('something is wrong tell dev to fix it!')
+        
+        
+        // console.log(array1[i].id);
         
         // newText.value = ''
 
@@ -51,7 +58,7 @@ function NewTask() {
     
     // new button for editing task
     const newButton = document.createElement('button')
-    newButton.setAttribute('id','editBtn')
+    newButton.setAttribute('id',`${newText}`)
     newButton.innerHTML = 'edit'
     // styling edit btn
     newButton.style.backgroundColor = 'green'
@@ -86,4 +93,3 @@ function deleteTask() {
     NewTodo.append(deleteButton)
 }
 
-debugger
