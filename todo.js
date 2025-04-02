@@ -2,9 +2,10 @@ const newTaskEvent = document.getElementById('btn').addEventListener('click',New
 const editEvent = document.getElementById('btn').addEventListener('click',editTask)
 const deleteEvent = document.getElementById('btn').addEventListener('click',deleteTask)
 // set local storage items to DOM
+// const savedTasks = []
 window.addEventListener('load',() => {
-    const savedTasks = localStorage.getItem('task')
-        NewTodo.textContent = savedTasks
+    const getTasks = localStorage.getItem('task')
+        NewTodo.textContent = getTasks
 })
 
 
@@ -26,14 +27,15 @@ NewTodo.addEventListener('click',e => {
                 // const element = array1[i];
             console.log(array1[i].id)
 
-            
+    // prompt to edit task
     let promptTask = prompt('edit task:')
 
         if(e.target.id === e.target.id){
 
             NewTodo.textContent = promptTask;
-            // localstorage setting items
+            // localstorage setting items after editing task
             localStorage.setItem('task',promptTask)
+            
 
         }
          else  alert('something is wrong tell dev to fix it!')
@@ -52,14 +54,20 @@ NewTodo.addEventListener('click',e => {
 function NewTask() {
     // value from input
     const newText = document.getElementById('inputText').value
-    
     // new h1 element for new task
     const NewElement = document.createElement('h1')
     NewElement.setAttribute('id',`${newText}`)
+    
+
     // text content from input to h1
     NewElement.textContent = newText
     // appending to container
     NewTodo.append(NewElement)
+
+    // localstorage setting items when new task is created
+    localStorage.setItem(`${newText}`,newText)
+    
+    
 
     
     
@@ -71,13 +79,6 @@ function NewTask() {
     newButton.style.backgroundColor = 'green'
     // append to container
     NewTodo.append(newButton)
-    
-
-
-    
-    
-    
-    
 }
 
 
