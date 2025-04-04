@@ -38,7 +38,7 @@ NewTodo.addEventListener('click',e => {
             
 
         }
-         else  alert('something is wrong tell dev to fix it!')
+         else  alert('something is wrong tell dev to fix it!') 
         
         
         // console.log(array1[i].id);
